@@ -1,2 +1,4 @@
-# spiritual-gifts-survey
-Survey and Calculator for Spiritual Gifts
+SpiritualGiftsSurvey-App
+=
+
+Project to wrap around the **SpiritualGiftsSurvey** class.
