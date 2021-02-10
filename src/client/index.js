@@ -13,5 +13,5 @@ hydrate(
       <App />
     </BrowserRouter>
   </Provider>,
-  document.getElementById('react-app')
+  document.getElementById('sgs-app')
 );

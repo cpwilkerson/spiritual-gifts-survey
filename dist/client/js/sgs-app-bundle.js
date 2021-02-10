@@ -341,7 +341,7 @@ react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPOR
 react__WEBPACK_IMPORTED_MODULE_0__.createElement(_app__WEBPACK_IMPORTED_MODULE_4__.default, null))),
 
 
-document.getElementById('react-app'));
+document.getElementById('sgs-app'));
 
 /***/ }),
 
