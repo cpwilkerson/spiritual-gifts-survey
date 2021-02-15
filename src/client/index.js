@@ -15,3 +15,8 @@ hydrate(
   </Provider>,
   document.getElementById('sgs-app')
 );
+
+// render(
+//   <App />,
+//   document.getElementById('sgs-app')
+// );

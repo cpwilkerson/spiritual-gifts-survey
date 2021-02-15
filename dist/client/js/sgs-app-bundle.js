@@ -240,6 +240,283 @@ mapDispatchToProps)(App)));
 
 /***/ }),
 
+/***/ "./src/client/components/question-collection.js":
+/*!******************************************************!*\
+  !*** ./src/client/components/question-collection.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "QuestionCollection": () => (/* binding */ QuestionCollection)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _question__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./question */ "./src/client/components/question.js");
+function _typeof(obj) {"@babel/helpers - typeof";if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {_typeof = function _typeof(obj) {return typeof obj;};} else {_typeof = function _typeof(obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;};}return _typeof(obj);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (_typeof(call) === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}
+
+
+
+
+
+/**
+ * My best QuestionCollection reactjs component ever!
+ */var
+QuestionCollection = /*#__PURE__*/function (_Component) {_inherits(QuestionCollection, _Component);var _super = _createSuper(QuestionCollection);
+  function QuestionCollection(props) {var _this;_classCallCheck(this, QuestionCollection);
+    _this = _super.call(this, props);
+
+    _this.state = {};return _this;
+  }
+
+  // componentDidMount () {
+  //   // Code to run on Browser mounting
+  // }
+  _createClass(QuestionCollection, [{ key: "renderQuestions", value:
+    function renderQuestions(questions) {var _this2 = this;
+      return questions.map(function (question, index) {return /*#__PURE__*/(
+          react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, { key: index }, /*#__PURE__*/
+          react__WEBPACK_IMPORTED_MODULE_0__.createElement(_question__WEBPACK_IMPORTED_MODULE_3__.Question, { question: question.question,
+            dimension: question.dimension,
+            onChange: function onChange(starCount, dimension) {
+              if (_this2.props.onChange) {
+                _this2.props.onChange(question, starCount, dimension);
+              }
+            } })));});
+
+
+    } }, { key: "render", value:
+
+    function render() {
+      return /*#__PURE__*/(
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "question-collection-wrapper" },
+        this.renderQuestions(this.props.questions)));
+
+
+    } }]);return QuestionCollection;}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+QuestionCollection.propTypes = {
+  questions: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().array.isRequired),
+  onChange: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func.isRequired) };
+
+
+/**
+ * mapStateToProps maps the application state to component props
+ * @param {*} state application state
+ * @returns {object} mapped props
+ */
+function mapStateToProps(state) {
+  return {};
+}
+
+/**
+ * maps the redux store to the object props
+ * @param {*} dispatch redux store
+ * @returns {object} function/props object
+ */
+function mapDispatchToProps(dispatch) {
+  return {};
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps,
+mapDispatchToProps)(QuestionCollection)));
+
+
+
+/***/ }),
+
+/***/ "./src/client/components/question.js":
+/*!*******************************************!*\
+  !*** ./src/client/components/question.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "Question": () => (/* binding */ Question)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+function _typeof(obj) {"@babel/helpers - typeof";if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {_typeof = function _typeof(obj) {return typeof obj;};} else {_typeof = function _typeof(obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;};}return _typeof(obj);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (_typeof(call) === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}
+
+
+
+
+var STAR_SIZE = '31.826'; // '63.652';
+
+/**
+ * My best Question reactjs component ever!
+ */var
+Question = /*#__PURE__*/function (_Component) {_inherits(Question, _Component);var _super = _createSuper(Question);
+  function Question(props) {var _this;_classCallCheck(this, Question);
+    _this = _super.call(this, props);
+
+    _this.state = {
+      starCount: 0 };return _this;
+
+  }
+
+  // componentDidMount () {
+  //   // Code to run on Browser mounting
+  // }
+  _createClass(Question, [{ key: "render", value:
+    function render() {var _this2 = this;
+      return /*#__PURE__*/(
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "question-wrapper" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "stars" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
+          onClick: function onClick() {
+            _this2.setState({ starCount: _this2.state.starCount === 1 ? 0 : 1 },
+            function () {
+              if (_this2.props.onChange) {
+                _this2.props.onChange(_this2.state.starCount,
+                _this2.props.dimension);
+              }
+            });
+
+          } }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
+          fill: this.state.starCount >= 1 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
+
+
+
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
+          onClick: function onClick() {
+            _this2.setState({
+              starCount: 2 },
+
+            function () {
+              if (_this2.props.onChange) {
+                _this2.props.onChange(_this2.state.starCount,
+                _this2.props.dimension);
+              }
+            });
+          } }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
+          fill: this.state.starCount >= 2 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
+
+
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
+          onClick: function onClick() {
+            _this2.setState({
+              starCount: 3 },
+
+            function () {
+              if (_this2.props.onChange) {
+                _this2.props.onChange(_this2.state.starCount,
+                _this2.props.dimension);
+              }
+            });
+          } }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
+          fill: this.state.starCount >= 3 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
+
+
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
+          onClick: function onClick() {
+            _this2.setState({
+              starCount: 4 },
+
+            function () {
+              if (_this2.props.onChange) {
+                _this2.props.onChange(_this2.state.starCount,
+                _this2.props.dimension);
+              }
+            });
+          } }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
+          fill: this.state.starCount >= 4 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
+
+
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
+          onClick: function onClick() {
+            _this2.setState({
+              starCount: 5 },
+
+            function () {
+              if (_this2.props.onChange) {
+                _this2.props.onChange(_this2.state.starCount,
+                _this2.props.dimension);
+              }
+            });
+          } }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
+          fill: this.state.starCount === 5 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" }))))), /*#__PURE__*/
+
+
+
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null,
+        this.props.question)));
+
+
+
+    } }]);return Question;}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+Question.propTypes = {
+  onChange: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number),
+  question: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired),
+  dimension: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string.isRequired) };
+
+
+/**
+ * mapStateToProps maps the application state to component props
+ * @param {*} state application state
+ * @returns {object} mapped props
+ */
+function mapStateToProps(state) {
+  return {};
+}
+
+/**
+ * maps the redux store to the object props
+ * @param {*} dispatch redux store
+ * @returns {object} function/props object
+ */
+function mapDispatchToProps(dispatch) {
+  return {};
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps,
+mapDispatchToProps)(Question)));
+
+
+
+/***/ }),
+
 /***/ "./src/client/components/spiritual-gifts-survey.js":
 /*!*********************************************************!*\
   !*** ./src/client/components/spiritual-gifts-survey.js ***!
@@ -253,12 +530,85 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SpiritualGiftsSurvey": () => (/* binding */ SpiritualGiftsSurvey)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _question_collection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./question-collection */ "./src/client/components/question-collection.js");
 function _typeof(obj) {"@babel/helpers - typeof";if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {_typeof = function _typeof(obj) {return typeof obj;};} else {_typeof = function _typeof(obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;};}return _typeof(obj);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (_typeof(call) === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}
 
+
+
+
+
+var questions = [
+{
+  question: 'I have the ability to organize ideas, resources, time, and people effectively.',
+  dimension: 'administration' },
+
+{
+  question: 'I am willing to study and prepare for the task of teaching.',
+  dimension: 'teaching' },
+
+{
+  question: 'I am able to relate the truths of God to specific situations.',
+  dimension: 'wisdom' },
+
+{
+  question: 'I have a God-given ability to help others grow in their faith.',
+  dimension: 'shepherding' },
+
+{
+  question: 'I possess a special ability to communicate the truth of salvation.',
+  dimension: 'evangelism' },
+
+{
+  question: 'I have the ability to make critical decisions when necessary.',
+  dimension: 'leadership' },
+
+{
+  question: 'I am sensitive to the hurts of people.',
+  dimension: 'mercy' },
+
+{
+  question: 'I experience joy in meeting needs through sharing possessions.',
+  dimension: 'giving' },
+
+{
+  question: 'I enjoy studying.',
+  dimension: 'knowledge' },
+
+{
+  question: 'I have delivered God’s message of warning and judgment.',
+  dimension: 'prophecy' },
+
+{
+  question: 'I am able to sense the true motivation of persons and movements.',
+  dimension: 'discernment' },
+
+{
+  question: 'I have a special ability to trust God in difficult situations.',
+  dimension: 'faith' },
+
+{
+  question: 'I have a strong desire to contribute to the establishment of new churches.',
+  dimension: 'apostleship' },
+
+{
+  question: 'I take action to meet physical and practical needs rather than merely talking about or planning to help.',
+  dimension: 'service/helps' },
+
+{
+  question: 'I enjoy entertaining guests in my home.',
+  dimension: 'hospitality' },
+
+{
+  question: 'I can adapt my guidance to fit the maturity of those working with me.',
+  dimension: 'leadership' },
+
+{
+  question: 'I can delegate and assign meaningful work.',
+  dimension: 'administration' }];
 
 
 
@@ -276,9 +626,32 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
   //   // Code to run on Browser mounting
   // }
   _createClass(SpiritualGiftsSurvey, [{ key: "render", value:
-    function render() {
+    function render() {var _this2 = this;
       return /*#__PURE__*/(
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "spiritual-gifts-survey-wrapper" }, "SpiritualGiftsSurvey lives!"));
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "spiritual-gifts-survey-wrapper" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_question_collection__WEBPACK_IMPORTED_MODULE_3__.QuestionCollection, { questions: questions,
+          onChange: function onChange(question, starCount, dimension) {
+            var questionObject = questions.find(function (item) {return (
+                item.question === question.question &&
+                item.dimension === dimension);});
+
+            if (questionObject) {
+              question.value = starCount;
+            }
+
+            _this2.setState({ updated: new Date() });
+          } }), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "calculator" },
+        questions.map(function (item, index) {return /*#__PURE__*/(
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: index }, /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Question"), /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.question), /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Dimension"), /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.dimension), /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Value"), /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.value)));}))));
+
+
 
 
 
@@ -305,7 +678,7 @@ function mapDispatchToProps(dispatch) {
   return {};
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps,
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_2__.connect)(mapStateToProps,
 mapDispatchToProps)(SpiritualGiftsSurvey)));
 
 
@@ -342,6 +715,12 @@ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_app__WEBPACK_IMPORTED_MODULE_4
 
 
 document.getElementById('sgs-app'));
+
+
+// render(
+//   <App />,
+//   document.getElementById('sgs-app')
+// );
 
 /***/ }),
 
