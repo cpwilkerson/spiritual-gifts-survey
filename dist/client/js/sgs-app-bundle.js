@@ -279,15 +279,22 @@ QuestionCollection = /*#__PURE__*/function (_Component) {_inherits(QuestionColle
   // }
   _createClass(QuestionCollection, [{ key: "renderQuestions", value:
     function renderQuestions(questions) {var _this2 = this;
-      return questions.map(function (question, index) {return /*#__PURE__*/(
-          react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, { key: index }, /*#__PURE__*/
-          react__WEBPACK_IMPORTED_MODULE_0__.createElement(_question__WEBPACK_IMPORTED_MODULE_3__.Question, { question: question.question,
-            dimension: question.dimension,
-            onChange: function onChange(starCount, dimension) {
-              if (_this2.props.onChange) {
-                _this2.props.onChange(question, starCount, dimension);
-              }
-            } })));});
+      return /*#__PURE__*/(
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("ol", null,
+
+        questions.map(function (question, index) {return /*#__PURE__*/(
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: index }, /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_question__WEBPACK_IMPORTED_MODULE_3__.Question, { question: question.question,
+              dimension: question.dimension,
+              onChange: function onChange(starCount, dimension) {
+                if (_this2.props.onChange) {
+                  _this2.props.onChange(question, starCount, dimension);
+                }
+              } })));})));
+
+
+
+
 
 
     } }, { key: "render", value:
@@ -625,7 +632,25 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
   // componentDidMount () {
   //   // Code to run on Browser mounting
   // }
-  _createClass(SpiritualGiftsSurvey, [{ key: "render", value:
+  _createClass(SpiritualGiftsSurvey, [{ key: "renderDimension", value:
+    function renderDimension(dimension) {
+      return /*#__PURE__*/(
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null,
+        dimension), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "value" },
+        questions.filter(function (item) {return item.dimension === dimension;}).
+        reduce(function (accumulator, item) {
+          var value = item.value ? item.value : 0;
+
+          return accumulator + value;
+        }, 0))));
+
+
+
+    } }, { key: "render", value:
+
     function render() {var _this2 = this;
       return /*#__PURE__*/(
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "spiritual-gifts-survey-wrapper" }, /*#__PURE__*/
@@ -641,16 +666,9 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
 
             _this2.setState({ updated: new Date() });
           } }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "calculator" },
-        questions.map(function (item, index) {return /*#__PURE__*/(
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { key: index }, /*#__PURE__*/
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Question"), /*#__PURE__*/
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.question), /*#__PURE__*/
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Dimension"), /*#__PURE__*/
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.dimension), /*#__PURE__*/
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Value"), /*#__PURE__*/
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.value)));}))));
-
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: "calculator" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('leadership')))));
 
 
 

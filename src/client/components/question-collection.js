@@ -19,17 +19,24 @@ class QuestionCollection extends Component {
   // }
 
   renderQuestions (questions) {
-    return questions.map((question, index) =>
-        <React.Fragment key={index}>
-          <Question question={question.question}
-            dimension={question.dimension}
-            onChange={(starCount, dimension) => {
-              if (this.props.onChange) {
-                this.props.onChange(question, starCount, dimension);
-              }
-            }}/>
-        </React.Fragment>
-      );
+    return (
+      <ol>
+        {
+          questions.map((question, index) =>
+              <li key={index}>
+                <Question question={question.question}
+                  dimension={question.dimension}
+                  onChange={(starCount, dimension) => {
+                    if (this.props.onChange) {
+                      this.props.onChange(question, starCount, dimension);
+                    }
+                  }}/>
+              </li>
+            )
+        }
+      </ol>
+    );
+
   }
 
   render () {

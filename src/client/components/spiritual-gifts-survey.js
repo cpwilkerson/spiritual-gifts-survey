@@ -89,6 +89,24 @@ class SpiritualGiftsSurvey extends Component {
   //   // Code to run on Browser mounting
   // }
 
+  renderDimension (dimension) {
+    return (
+      <div>
+        <label>
+          {dimension}
+        </label>
+        <span className="value">
+          {questions.filter((item) => item.dimension === dimension).
+            reduce((accumulator, item) => {
+              const value = item.value ? item.value : 0;
+
+              return accumulator + value;
+            }, 0)}
+        </span>
+      </div>
+    );
+  }
+
   render () {
     return (
       <div className="spiritual-gifts-survey-wrapper">
@@ -104,18 +122,11 @@ class SpiritualGiftsSurvey extends Component {
 
             this.setState({updated: new Date()});
           }}/>
-        <div className="calculator">
-          {questions.map((item, index) =>
-              <div key={index}>
-                <label>Question</label>
-                <p>{item.question}</p>
-                <label>Dimension</label>
-                <p>{item.dimension}</p>
-                <label>Value</label>
-                <p>{item.value}</p>
-              </div>
-            )}
-        </div>
+        <ul className="calculator">
+          <li>
+            {this.renderDimension('leadership')}
+          </li>
+        </ul>
       </div>
     );
   }
