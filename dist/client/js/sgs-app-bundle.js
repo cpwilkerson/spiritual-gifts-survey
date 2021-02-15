@@ -637,8 +637,10 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
     function renderDimension(dimension) {
       return /*#__PURE__*/(
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null,
-        dimension), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null,
+        dimension.toUpperCase())), /*#__PURE__*/
+
 
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "value" },
         questions.filter(function (item) {return item.dimension === dimension;}).
@@ -669,7 +671,52 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
           } }), /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: "calculator" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('leadership')))));
+        this.renderDimension('leadership')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('administration')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('teaching')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('knowledge')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('wisdom')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('prophecy')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('discernment')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('exhortation')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('shepherding')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('faith')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('evangelism')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('apostleship')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('service/helps')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('mercy')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('giving')), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
+        this.renderDimension('hospitality')))));
 
 
 

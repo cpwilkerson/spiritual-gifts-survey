@@ -93,7 +93,9 @@ class SpiritualGiftsSurvey extends Component {
     return (
       <div>
         <label>
-          {dimension}
+          <strong>
+            {dimension.toUpperCase()}
+          </strong>
         </label>
         <span className="value">
           {questions.filter((item) => item.dimension === dimension).
@@ -125,6 +127,51 @@ class SpiritualGiftsSurvey extends Component {
         <ul className="calculator">
           <li>
             {this.renderDimension('leadership')}
+          </li>
+          <li>
+            {this.renderDimension('administration')}
+          </li>
+          <li>
+            {this.renderDimension('teaching')}
+          </li>
+          <li>
+            {this.renderDimension('knowledge')}
+          </li>
+          <li>
+            {this.renderDimension('wisdom')}
+          </li>
+          <li>
+            {this.renderDimension('prophecy')}
+          </li>
+          <li>
+            {this.renderDimension('discernment')}
+          </li>
+          <li>
+            {this.renderDimension('exhortation')}
+          </li>
+          <li>
+            {this.renderDimension('shepherding')}
+          </li>
+          <li>
+            {this.renderDimension('faith')}
+          </li>
+          <li>
+            {this.renderDimension('evangelism')}
+          </li>
+          <li>
+            {this.renderDimension('apostleship')}
+          </li>
+          <li>
+            {this.renderDimension('service/helps')}
+          </li>
+          <li>
+            {this.renderDimension('mercy')}
+          </li>
+          <li>
+            {this.renderDimension('giving')}
+          </li>
+          <li>
+            {this.renderDimension('hospitality')}
           </li>
         </ul>
       </div>
