@@ -381,7 +381,8 @@ Question = /*#__PURE__*/function (_Component) {_inherits(Question, _Component);v
     function render() {var _this2 = this;
       return /*#__PURE__*/(
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "question-wrapper" }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "stars" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "stars",
+          style: { margin: '10px' } }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
           onClick: function onClick() {
             _this2.setState({ starCount: _this2.state.starCount === 1 ? 0 : 1 },
@@ -484,7 +485,7 @@ Question = /*#__PURE__*/function (_Component) {_inherits(Question, _Component);v
 
 
 
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { display: 'inline-block' } },
         this.props.question)));
 
 

@@ -24,7 +24,8 @@ class Question extends Component {
   render () {
     return (
       <div className="question-wrapper">
-        <span className="stars">
+        <span className="stars"
+          style={{margin: '10px'}}>
           <svg x="0" y="0" width={STAR_SIZE} height={STAR_SIZE} viewBox="0, 0, 63.652, 63.652"
             onClick={() => {
               this.setState({starCount: this.state.starCount === 1 ? 0 : 1},
@@ -127,7 +128,7 @@ class Question extends Component {
             </g>
           </svg>
         </span>
-        <label>
+        <label style={{display: 'inline-block'}}>
           {this.props.question}
         </label>
       </div>
