@@ -616,8 +616,169 @@ var questions = [
 
 {
   question: 'I can delegate and assign meaningful work.',
-  dimension: 'administration' }];
+  dimension: 'administration' },
 
+{
+  question: 'I have an ability and desire to teach.',
+  dimension: 'teaching' },
+
+{
+  question: 'I am usually able to analyze a situation correctly.',
+  dimension: 'wisdom' },
+
+{
+  question: 'I have a natural tendency to encourage others.',
+  dimension: 'exhortation' },
+
+{
+  question: 'I am willing to take the initiative in helping other Christians grow in their faith.',
+  dimension: 'shepherding' },
+
+{
+  question: 'I have an acute awareness of the emotions of other people, such as loneliness, pain, fear, and anger.',
+  dimension: 'mercy' },
+
+{
+  question: 'I am a cheerful giver.',
+  dimension: 'giving' },
+
+{
+  question: 'I spend time digging into facts.',
+  dimension: 'knowledge' },
+
+{
+  question: 'I feel that I have a message from God to deliver to others.',
+  dimension: 'prophecy' },
+
+{
+  question: 'I can recognize when a person is genuine/honest.',
+  dimension: 'discernment' },
+
+{
+  question: 'I am a person of vision (a clear mental portrait of a preferable future given by God). I am able to communicate vision in such a way that others commit to making the vision a reality.',
+  dimension: 'leadership' },
+
+{
+  question: 'I am willing to yield to God’s will rather than question and waver.',
+  dimension: 'faith' },
+
+{
+  question: 'I would like to be more active in getting the gospel to people in other lands.',
+  dimension: 'apostleship' },
+
+{
+  question: 'It makes me happy to do things for people in need.',
+  dimension: 'service/helps' },
+
+{
+  question: 'I am successful in getting a group to do its work joyfully.',
+  dimension: 'administration' },
+
+{
+  question: 'I am able to make strangers feel at ease.',
+  dimension: 'hospitality' },
+
+{
+  question: 'I have the ability to plan learning approaches.',
+  dimension: 'teaching' },
+
+{
+  question: 'I can identify those who need encouragement.',
+  dimension: 'exhortation' },
+
+{
+  question: 'I have trained Christians to be more obedient disciples of Christ.',
+  dimension: 'shepherding' },
+
+{ question: 'I am willing to do whatever it takes to see others come to Christ.',
+  dimension: 'evangelism' },
+{ question: 'I am attracted to people who are hurting.',
+  dimension: 'mercy' },
+{ question: 'I am a generous giver.',
+  dimension: 'giving' },
+{ question: 'I am able to discover new truths.',
+  dimension: 'knowledge' },
+{ question: '______ 40. I have spiritual insights from Scripture concerning issues and people that compel me to speak out.',
+  dimension: '' },
+{ question: '______ 41. I can sense when a person is acting in accord with God’s will.',
+  dimension: '' },
+{ question: '______ 42. I can trust in God even when things look dark.',
+  dimension: '' },
+{ question: '______ 43. I can determine where God wants a group to go and help it get there.',
+  dimension: '' },
+{ question: '______ 44. I have a strong desire to take the gospel to places where it has never been heard.',
+  dimension: '' },
+{ question: '______ 45. I enjoy reaching out to new people in my church and community.',
+  dimension: '' },
+{ question: '______ 46. I am sensitive to the needs of people.',
+  dimension: '' },
+{ question: '______ 47. I have been able to make effective and efficient plans for accomplishing the goals of a group.',
+  dimension: '' },
+{ question: '______ 48. I often am consulted when fellow Christians are struggling to make difficult decisions.',
+  dimension: '' },
+{ question: '______ 49. I think about how I can comfort and encourage others in my congregation.',
+  dimension: '' },
+{ question: '______ 50. I am able to give spiritual direction to others.',
+  dimension: '' },
+{ question: '______ 51. I am able to present the gospel to lost persons in such a way that they accept the Lord and His salvation.',
+  dimension: '' },
+{ question: '______ 52. I possess an unusual capacity to understand the feelings of those in distress.',
+  dimension: '' },
+{ question: '______ 53. I have a strong sense of stewardship based on the recognition that God owns all things.',
+  dimension: '' },
+{ question: '______ 54. I have delivered to other persons messages that have come directly from God.',
+  dimension: '' },
+{ question: '______ 55. I can sense when a person is acting under God’s leadership.',
+  dimension: '' },
+{ question: '______ 56. I try to be in God’s will continually and be available for His use.',
+  dimension: '' },
+{ question: '______ 57. I feel that I should take the gospel to people who have different beliefs from me.',
+  dimension: '' },
+{ question: '______ 58. I have an acute awareness of the physical needs of others.',
+  dimension: '' },
+{ question: '______ 59. I am skilled in setting forth positive and precise steps of action.',
+  dimension: '' },
+{ question: '______ 60. I like to meet visitors at church and make them feel welcome.',
+  dimension: '' },
+{ question: '______ 61. I explain Scripture in such a way that others understand it.',
+  dimension: '' },
+{ question: '______ 62. I can usually see spiritual solutions to problems.',
+  dimension: '' },
+{ question: '______ 63. I welcome opportunities to help people who need comfort, consolation, encouragement, and counseling.',
+  dimension: '' },
+{ question: '______ 64. I feel at ease in sharing Christ with nonbelievers.',
+  dimension: '' },
+{ question: '______ 65. I can influence others to perform to their highest God-given potential.',
+  dimension: '' },
+{ question: '______ 66. I recognize the signs of stress and distress in others.' },
+{ question: '______ 67. I desire to give generously and unpretentiously to worthwhile projects and ministries.',
+  dimension: '' },
+{ question: '______ 68. I can organize facts into meaningful relationships.',
+  dimension: '' },
+{ question: '______ 69. God gives me messages to deliver to His people.',
+  dimension: '' },
+{ question: '______ 70. I am able to sense whether people are being honest when they tell of their religious experiences.',
+  dimension: '' },
+{ question: '______ 71. I enjoy presenting the gospel to persons of other cultures and backgrounds.',
+  dimension: '' },
+{ question: '______ 72. I enjoy doing little things that help people.',
+  dimension: '' },
+{ question: '______ 73. I can give a clear, uncomplicated presentation.',
+  dimension: '' },
+{ question: '______ 74. I have been able to apply biblical truth to the specific needs of my church.',
+  dimension: '' },
+{ question: '______ 75. God has used me to encourage others to live Christlike lives.',
+  dimension: '' },
+{ question: '______ 76. I have sensed the need to help other people become more effective in their ministries.',
+  dimension: '' },
+{ question: '______ 77. I like to talk about Jesus to those who do not know Him.',
+  dimension: '' },
+{ question: '______ 78. I have the ability to make strangers feel comfortable in my home.',
+  dimension: '' },
+{ question: '______ 79. I have a wide range of study resources and know how to secure information.',
+  dimension: '' },
+{ question: '______ 80. I feel assured that a situation will change for the glory of God even when the situation seem impossible.',
+  dimension: '' }];
 
 
 /**
