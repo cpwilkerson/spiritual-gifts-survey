@@ -377,113 +377,43 @@ Question = /*#__PURE__*/function (_Component) {_inherits(Question, _Component);v
   // componentDidMount () {
   //   // Code to run on Browser mounting
   // }
-  _createClass(Question, [{ key: "render", value:
-    function render() {var _this2 = this;
+  _createClass(Question, [{ key: "renderStar", value:
+    function renderStar(value) {var _this2 = this;
+      return /*#__PURE__*/(
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
+          onClick: function onClick() {
+            _this2.setState({ starCount: _this2.state.starCount === value ? 0 : value },
+            function () {
+              if (_this2.props.onChange) {
+                _this2.props.onChange(_this2.state.starCount,
+                _this2.props.dimension);
+              }
+            });
+
+          } }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
+          fill: this.state.starCount >= value ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
+
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))));
+
+
+
+
+
+    } }, { key: "render", value:
+
+    function render() {
       return /*#__PURE__*/(
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "question-wrapper" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "stars",
-          style: { margin: '10px' } }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
-          onClick: function onClick() {
-            _this2.setState({ starCount: _this2.state.starCount === 1 ? 0 : 1 },
-            function () {
-              if (_this2.props.onChange) {
-                _this2.props.onChange(_this2.state.starCount,
-                _this2.props.dimension);
-              }
-            });
-
-          } }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
-          fill: this.state.starCount >= 1 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
-
-
-
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
-          onClick: function onClick() {
-            _this2.setState({
-              starCount: 2 },
-
-            function () {
-              if (_this2.props.onChange) {
-                _this2.props.onChange(_this2.state.starCount,
-                _this2.props.dimension);
-              }
-            });
-          } }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
-          fill: this.state.starCount >= 2 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
-
-
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
-          onClick: function onClick() {
-            _this2.setState({
-              starCount: 3 },
-
-            function () {
-              if (_this2.props.onChange) {
-                _this2.props.onChange(_this2.state.starCount,
-                _this2.props.dimension);
-              }
-            });
-          } }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
-          fill: this.state.starCount >= 3 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
-
-
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
-          onClick: function onClick() {
-            _this2.setState({
-              starCount: 4 },
-
-            function () {
-              if (_this2.props.onChange) {
-                _this2.props.onChange(_this2.state.starCount,
-                _this2.props.dimension);
-              }
-            });
-          } }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
-          fill: this.state.starCount >= 4 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" })))), /*#__PURE__*/
-
-
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: STAR_SIZE, height: STAR_SIZE, viewBox: "0, 0, 63.652, 63.652",
-          onClick: function onClick() {
-            _this2.setState({
-              starCount: 5 },
-
-            function () {
-              if (_this2.props.onChange) {
-                _this2.props.onChange(_this2.state.starCount,
-                _this2.props.dimension);
-              }
-            });
-          } }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-0.243, -0.243)" }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z",
-          fill: this.state.starCount === 5 ? '#000000' : '#FFFFFF' }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" }))))), /*#__PURE__*/
-
-
-
+          style: { margin: '10px' } },
+        this.renderStar(1),
+        this.renderStar(2),
+        this.renderStar(3),
+        this.renderStar(4),
+        this.renderStar(5)), /*#__PURE__*/
 
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: { display: 'inline-block' } },
         this.props.question)));

@@ -21,112 +21,42 @@ class Question extends Component {
   //   // Code to run on Browser mounting
   // }
 
+  renderStar (value) {
+    return (
+      <svg x="0" y="0" width={STAR_SIZE} height={STAR_SIZE} viewBox="0, 0, 63.652, 63.652"
+        onClick={() => {
+          this.setState({starCount: this.state.starCount === value ? 0 : value},
+                        () => {
+                          if (this.props.onChange) {
+                            this.props.onChange(this.state.starCount,
+                                                this.props.dimension);
+                          }
+                        });
+
+        }}>
+        <g id="Layer_1" transform="translate(-0.243, -0.243)">
+          <g>
+            <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z"
+              fill={this.state.starCount >= value ? '#000000' : '#FFFFFF'}
+              />
+            <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z" fillOpacity="0" stroke="#000000" strokeWidth="1"
+            />
+          </g>
+        </g>
+      </svg>
+    );
+  }
+
   render () {
     return (
       <div className="question-wrapper">
         <span className="stars"
           style={{margin: '10px'}}>
-          <svg x="0" y="0" width={STAR_SIZE} height={STAR_SIZE} viewBox="0, 0, 63.652, 63.652"
-            onClick={() => {
-              this.setState({starCount: this.state.starCount === 1 ? 0 : 1},
-                            () => {
-                              if (this.props.onChange) {
-                                this.props.onChange(this.state.starCount,
-                                                    this.props.dimension);
-                              }
-                            });
-
-            }}>
-            <g id="Layer_1" transform="translate(-0.243, -0.243)">
-              <g>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z"
-                  fill={this.state.starCount >= 1 ? '#000000' : '#FFFFFF'}
-                  />
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z" fillOpacity="0" stroke="#000000" strokeWidth="1"
-                />
-              </g>
-            </g>
-          </svg>
-          <svg x="0" y="0" width={STAR_SIZE} height={STAR_SIZE} viewBox="0, 0, 63.652, 63.652"
-            onClick={() => {
-              this.setState({
-                starCount: 2
-              },
-              () => {
-                if (this.props.onChange) {
-                  this.props.onChange(this.state.starCount,
-                                      this.props.dimension);
-                }
-              });
-            }}>
-            <g id="Layer_1" transform="translate(-0.243, -0.243)">
-              <g>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z"
-                  fill={this.state.starCount >= 2 ? '#000000' : '#FFFFFF'}/>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
-              </g>
-            </g>
-          </svg>
-          <svg x="0" y="0" width={STAR_SIZE} height={STAR_SIZE} viewBox="0, 0, 63.652, 63.652"
-            onClick={() => {
-              this.setState({
-                starCount: 3
-              },
-              () => {
-                if (this.props.onChange) {
-                  this.props.onChange(this.state.starCount,
-                                      this.props.dimension);
-                }
-              });
-            }}>
-            <g id="Layer_1" transform="translate(-0.243, -0.243)">
-              <g>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z"
-                  fill={this.state.starCount >= 3 ? '#000000' : '#FFFFFF'}/>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
-              </g>
-            </g>
-          </svg>
-          <svg x="0" y="0" width={STAR_SIZE} height={STAR_SIZE} viewBox="0, 0, 63.652, 63.652"
-            onClick={() => {
-              this.setState({
-                starCount: 4
-              },
-              () => {
-                if (this.props.onChange) {
-                  this.props.onChange(this.state.starCount,
-                                      this.props.dimension);
-                }
-              });
-            }}>
-            <g id="Layer_1" transform="translate(-0.243, -0.243)">
-              <g>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z"
-                  fill={this.state.starCount >= 4 ? '#000000' : '#FFFFFF'}/>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
-              </g>
-            </g>
-          </svg>
-          <svg x="0" y="0" width={STAR_SIZE} height={STAR_SIZE} viewBox="0, 0, 63.652, 63.652"
-            onClick={() => {
-              this.setState({
-                starCount: 5
-              },
-              () => {
-                if (this.props.onChange) {
-                  this.props.onChange(this.state.starCount,
-                                      this.props.dimension);
-                }
-              });
-            }}>
-            <g id="Layer_1" transform="translate(-0.243, -0.243)">
-              <g>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z"
-                  fill={this.state.starCount === 5 ? '#000000' : '#FFFFFF'}/>
-                <path d="M13.518,63.395 L17.156,41.089 L1.743,25.292 L23.043,22.038 L32.569,1.743 L42.095,22.038 L63.395,25.292 L47.982,41.089 L51.62,63.395 L32.569,52.864 z" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
-              </g>
-            </g>
-          </svg>
+          {this.renderStar(1)}
+          {this.renderStar(2)}
+          {this.renderStar(3)}
+          {this.renderStar(4)}
+          {this.renderStar(5)}
         </span>
         <label style={{display: 'inline-block'}}>
           {this.props.question}
