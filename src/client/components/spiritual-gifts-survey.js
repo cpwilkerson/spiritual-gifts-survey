@@ -4,328 +4,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {QuestionCollection} from './question-collection';
 
-const questions = [
-  {
-    question: 'I have the ability to organize ideas, resources, time, and people effectively.',
-    dimension: 'administration'
-  },
-  {
-    question: 'I am willing to study and prepare for the task of teaching.',
-    dimension: 'teaching'
-  },
-  {
-    question: 'I am able to relate the truths of God to specific situations.',
-    dimension: 'wisdom'
-  },
-  {
-    question: 'I have a God-given ability to help others grow in their faith.',
-    dimension: 'shepherding'
-  },
-  {
-    question: 'I possess a special ability to communicate the truth of salvation.',
-    dimension: 'evangelism'
-  },
-  {
-    question: 'I have the ability to make critical decisions when necessary.',
-    dimension: 'leadership'
-  },
-  {
-    question: 'I am sensitive to the hurts of people.',
-    dimension: 'mercy'
-  },
-  {
-    question: 'I experience joy in meeting needs through sharing possessions.',
-    dimension: 'giving'
-  },
-  {
-    question: 'I enjoy studying.',
-    dimension: 'knowledge'
-  },
-  {
-    question: 'I have delivered God’s message of warning and judgment.',
-    dimension: 'prophecy'
-  },
-  {
-    question: 'I am able to sense the true motivation of persons and movements.',
-    dimension: 'discernment'
-  },
-  {
-    question: 'I have a special ability to trust God in difficult situations.',
-    dimension: 'faith'
-  },
-  {
-    question: 'I have a strong desire to contribute to the establishment of new churches.',
-    dimension: 'apostleship'
-  },
-  {
-    question: 'I take action to meet physical and practical needs rather than merely talking about or planning to help.',
-    dimension: 'service/helps'
-  },
-  {
-    question: 'I enjoy entertaining guests in my home.',
-    dimension: 'hospitality'
-  },
-  {
-    question: 'I can adapt my guidance to fit the maturity of those working with me.',
-    dimension: 'leadership'
-  },
-  {
-    question: 'I can delegate and assign meaningful work.',
-    dimension: 'administration'
-  },
-  {
-    question: 'I have an ability and desire to teach.',
-    dimension: 'teaching'
-  },
-  {
-    question: 'I am usually able to analyze a situation correctly.',
-    dimension: 'wisdom'
-  },
-  {
-    question: 'I have a natural tendency to encourage others.',
-    dimension: 'exhortation'
-  },
-  {
-    question: 'I am willing to take the initiative in helping other Christians grow in their faith.',
-    dimension: 'shepherding'
-  },
-  {
-    question: 'I have an acute awareness of the emotions of other people, such as loneliness, pain, fear, and anger.',
-    dimension: 'mercy'
-  },
-  {
-    question: 'I am a cheerful giver.',
-    dimension: 'giving'
-  },
-  {
-    question: 'I spend time digging into facts.',
-    dimension: 'knowledge'
-  },
-  {
-    question: 'I feel that I have a message from God to deliver to others.',
-    dimension: 'prophecy'
-  },
-  {
-    question: 'I can recognize when a person is genuine/honest.',
-    dimension: 'discernment'
-  },
-  {
-    question: 'I am a person of vision (a clear mental portrait of a preferable future given by God). I am able to communicate vision in such a way that others commit to making the vision a reality.',
-    dimension: 'leadership'
-  },
-  {
-    question: 'I am willing to yield to God’s will rather than question and waver.',
-    dimension: 'faith'
-  },
-  {
-    question: 'I would like to be more active in getting the gospel to people in other lands.',
-    dimension: 'apostleship'
-  },
-  {
-    question: 'It makes me happy to do things for people in need.',
-    dimension: 'service/helps'
-  },
-  {
-    question: 'I am successful in getting a group to do its work joyfully.',
-    dimension: 'administration'
-  },
-  {
-    question: 'I am able to make strangers feel at ease.',
-    dimension: 'hospitality'
-  },
-  {
-    question: 'I have the ability to plan learning approaches.',
-    dimension: 'teaching'
-  },
-  {
-    question: 'I can identify those who need encouragement.',
-    dimension: 'exhortation'
-  },
-  {
-    question: 'I have trained Christians to be more obedient disciples of Christ.',
-    dimension: 'shepherding'
-  },
-  {
-    question: 'I am willing to do whatever it takes to see others come to Christ.',
-    dimension: 'evangelism'
-  },
-  {
-    question: 'I am attracted to people who are hurting.',
-    dimension: 'mercy'
-  },
-  {
-    question: 'I am a generous giver.',
-    dimension: 'giving'
-  },
-  {
-    question: 'I am able to discover new truths.',
-    dimension: 'knowledge'
-  },
-  {
-    question: 'I have spiritual insights from Scripture concerning issues and people that compel me to speak out.',
-    dimension: 'prophecy'
-  },
-  {
-    question: 'I can sense when a person is acting in accord with God’s will.',
-    dimension: 'discernment'
-  },
-  {
-    question: 'I can trust in God even when things look dark.',
-    dimension: 'faith'
-  },
-  {
-    question: 'I can determine where God wants a group to go and help it get there.',
-    dimension: 'leadership'
-  },
-  {
-    question: 'I have a strong desire to take the gospel to places where it has never been heard.',
-    dimension: 'apostleship'
-  },
-  {
-    question: 'I enjoy reaching out to new people in my church and community.',
-    dimension: 'hospitality'
-  },
-  {
-    question: 'I am sensitive to the needs of people.',
-    dimension: 'service/helps'
-  },
-  {
-    question: 'I have been able to make effective and efficient plans for accomplishing the goals of a group.',
-    dimension: 'administration'
-  },
-  {
-    question: 'I often am consulted when fellow Christians are struggling to make difficult decisions.',
-    dimension: 'wisdom'
-  },
-  {
-    question: 'I think about how I can comfort and encourage others in my congregation.',
-    dimension: 'exhortation'
-  },
-  {
-    question: 'I am able to give spiritual direction to others.',
-    dimension: 'shepherding'
-  },
-  {
-    question: 'I am able to present the gospel to lost persons in such a way that they accept the Lord and His salvation.',
-    dimension: 'evangelism'
-  },
-  {
-    question: 'I possess an unusual capacity to understand the feelings of those in distress.',
-    dimension: 'mercy'
-  },
-  {
-    question: 'I have a strong sense of stewardship based on the recognition that God owns all things.',
-    dimension: 'giving'
-  },
-  {
-    question: 'I have delivered to other persons messages that have come directly from God.',
-    dimension: 'prophecy'
-  },
-  {
-    question: 'I can sense when a person is acting under God’s leadership.',
-    dimension: 'discernment'
-  },
-  {
-    question: 'I try to be in God’s will continually and be available for His use.',
-    dimension: 'faith'
-  },
-  {
-    question: 'I feel that I should take the gospel to people who have different beliefs from me.',
-    dimension: 'apostleship'
-  },
-  {
-    question: 'I have an acute awareness of the physical needs of others.',
-    dimension: 'service/helps'
-  },
-  {
-    question: 'I am skilled in setting forth positive and precise steps of action.',
-    dimension: 'administration'
-  },
-  {
-    question: 'I like to meet visitors at church and make them feel welcome.',
-    dimension: 'hospitality'
-  },
-  {
-    question: 'I explain Scripture in such a way that others understand it.',
-    dimension: 'teaching'
-  },
-  {
-    question: 'I can usually see spiritual solutions to problems.',
-    dimension: 'wisdom'
-  },
-  {
-    question: 'I welcome opportunities to help people who need comfort, consolation, encouragement, and counseling.',
-    dimension: 'exhortation'
-  },
-  {
-    question: 'I feel at ease in sharing Christ with nonbelievers.',
-    dimension: 'evangelism'
-  },
-  {
-    question: 'I can influence others to perform to their highest God-given potential.',
-    dimension: 'leadership'
-  },
-  {
-    question: 'I recognize the signs of stress and distress in others.',
-    dimension: 'mercy'
-  },
-  {
-    question: 'I desire to give generously and unpretentiously to worthwhile projects and ministries.',
-    dimension: 'giving'
-  },
-  {
-    question: 'I can organize facts into meaningful relationships.',
-    dimension: 'knowledge'
-  },
-  {
-    question: 'God gives me messages to deliver to His people.',
-    dimension: 'prophecy'
-  },
-  {
-    question: 'I am able to sense whether people are being honest when they tell of their religious experiences.',
-    dimension: 'discernment'
-  },
-  {
-    question: 'I enjoy presenting the gospel to persons of other cultures and backgrounds.',
-    dimension: 'apostleship'
-  },
-  {
-    question: 'I enjoy doing little things that help people.',
-    dimension: 'service/helps'
-  },
-  {
-    question: 'I can give a clear, uncomplicated presentation.',
-    dimension: 'teaching'
-  },
-  {
-    question: 'I have been able to apply biblical truth to the specific needs of my church.',
-    dimension: 'wisdom'
-  },
-  {
-    question: 'God has used me to encourage others to live Christlike lives.',
-    dimension: 'exhortation'
-  },
-  {
-    question: 'I have sensed the need to help other people become more effective in their ministries.',
-    dimension: 'shepherding'
-  },
-  {
-    question: 'I like to talk about Jesus to those who do not know Him.',
-    dimension: 'evangelism'
-  },
-  {
-    question: 'I have the ability to make strangers feel comfortable in my home.',
-    dimension: 'hospitality'
-  },
-  {
-    question: 'I have a wide range of study resources and know how to secure information.',
-    dimension: 'knowledge'
-  },
-  {
-    question: 'I feel assured that a situation will change for the glory of God even when the situation seem impossible.',
-    dimension: 'faith'
-  }
-];
+const questions = require('./questions').questions;
 
 /**
  * My best SpiritualGiftsSurvey reactjs component ever!
@@ -340,6 +19,15 @@ class SpiritualGiftsSurvey extends Component {
   // componentDidMount () {
   //   // Code to run on Browser mounting
   // }
+
+  getLineLength (dimension) {
+    return questions.filter((item) => item.dimension === dimension).
+            reduce((accumulator, item) => {
+              const value = item.value ? item.value : 0;
+
+              return accumulator + value;
+            }, 0) * 16;
+  }
 
   renderDimension (dimension) {
     return (
@@ -376,6 +64,114 @@ class SpiritualGiftsSurvey extends Component {
 
             this.setState({updated: new Date()});
           }}/>
+        <svg x="0" y="0" width="1023.818" height="591.362" viewBox="0, 0, 1023.818, 591.362">
+          <g id="Layer_1" transform="translate(-36.182, -79)">
+            <path d="M135.5,100.5 L135.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M120.5,500.5 L1035.5,500.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M120.5,420.5 L1035.5,420.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M120.5,340.5 L1035.5,340.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M120.5,260.5 L1035.5,260.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M120.5,180.5 L1035.5,180.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M120.5,100.5 L1035.5,100.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M195.5,100.5 L195.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M735.5,100.5 L735.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M675.5,100.5 L675.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M615.5,100.5 L615.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M555.5,100.5 L555.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M495.5,100.5 L495.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M435.5,100.5 L435.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M375.5,100.5 L375.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M315.5,100.5 L315.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M255.5,100.5 L255.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M1035.5,100.5 L1035.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M975.5,100.5 L975.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M915.5,100.5 L915.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M855.5,100.5 L855.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <path d="M795.5,100.5 L795.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
+            <text transform="matrix(1, 0, 0, 1, 100.54, 492.5)">
+              <tspan x="-6.54" y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">0</tspan>
+            </text>
+            <text transform="matrix(1, 0, 0, 1, 100.54, 108)">
+              <tspan x="-13.08" y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">25</tspan>
+            </text>
+            <text transform="matrix(1, 0, 0, 1, 100.54, 180)">
+              <tspan x="-13.08" y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">20</tspan>
+            </text>
+            <text transform="matrix(1, 0, 0, 1, 100.54, 260)">
+              <tspan x="-13.08" y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">15</tspan>
+            </text>
+            <text transform="matrix(1, 0, 0, 1, 100.54, 340)">
+              <tspan x="-13.08" y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">10</tspan>
+            </text>
+            <text transform="matrix(1, 0, 0, 1, 108.29, 420)">
+              <tspan x="-14.29" y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">5</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 97.921, 571.739)">
+              <tspan x="-62.112" y="4" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">LEADERSHIP</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 136.181, 590.181)">
+              <tspan x="-87.682" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">ADMINISTRATION</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 229.074, 561.869)">
+              <tspan x="-56.142" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">TEACHING</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 257.386, 590.181)">
+              <tspan x="-38.938" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">KNOWLEDGE</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 979.819, 590.181)">
+              <tspan x="-41.074" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">HOSPITALITY</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 919.819, 590.181)">
+              <tspan x="23.054" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">GIVING</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 859.819, 590.181)">
+              <tspan x="24.854" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">MERCY</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 800.181, 590.181)">
+              <tspan x="-65.794" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">SERVICE/HELPS</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 738.819, 590.181)">
+              <tspan x="-47.89" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">APOSTLESHIP</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 679.819, 590.181)">
+              <tspan x="-38.098" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">EVANGELISM</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 619.819, 590.181)">
+              <tspan x="33.302" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">FAITH</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 559.819, 590.181)">
+              <tspan x="-55.762" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">SHEPHERDING</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 499.166, 589.529)">
+              <tspan x="-53.89" y="5.712" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">EXHORTATION</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 439.819, 590.181)">
+              <tspan x="-57.562" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">DISCERNMENT</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 380.819, 590.181)">
+              <tspan x="-15.538" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">PROPHECY</tspan>
+            </text>
+            <text transform="matrix(0.707, -0.707, 0.707, 0.707, 319.819, 590.181)">
+              <tspan x="5.486" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">WISDOM</tspan>
+            </text>
+            <path d={`M135.5,500.5 L135.5,${500.5 - this.getLineLength('leadership')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M195.5,500.5 L195.5,${500.5 - this.getLineLength('administration')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M255.5,500.5 L255.5,${500.5 - this.getLineLength('teaching')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M315.5,500.5 L315.5,${500.5 - this.getLineLength('knowledge')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M375.5,500.5 L375.5,${500.5 - this.getLineLength('wisdom')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M435.5,500.5 L435.5,${500.5 - this.getLineLength('prophecy')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M495.5,500.5 L495.5,${500.5 - this.getLineLength('discernment')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M555.5,500.5 L555.5,${500.5 - this.getLineLength('exhortation')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M615.5,500.5 L615.5,${500.5 - this.getLineLength('shepherding')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M675.5,500.5 L675.5,${500.5 - this.getLineLength('faith')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M735.5,500.5 L735.5,${500.5 - this.getLineLength('evangelism')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M795.5,500.5 L795.5,${500.5 - this.getLineLength('apostleship')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M855.5,500.5 L855.5,${500.5 - this.getLineLength('service/helps')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M915.5,500.5 L915.5,${500.5 - this.getLineLength('mercy')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M975.5,500.5 L975.5,${500.5 - this.getLineLength('giving')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            <path d={`M1035.5,500.5 L1035.5,${500.5 - this.getLineLength('hospitality')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+          </g>
+        </svg>
         <ul className="calculator">
           <li>
             {this.renderDimension('leadership')}
