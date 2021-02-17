@@ -2,10 +2,14 @@
   position: relative;
 
   @media only print {
+    li:first-child {
+      page-break-before: always;
+    }
+
     @media (max-width: 40em) {
       li:nth-child(21n) {
         page-break-before: always;
-      } 
+      }
     }
     @media (min-width: 40em) {
       li:nth-child(11n) {
