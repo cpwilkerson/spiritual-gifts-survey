@@ -20,10 +20,13 @@ class QuestionCollection extends Component {
 
   renderQuestions (questions) {
     return (
-      <ol>
+      <ol className="question-list">
         {
           questions.map((question, index) =>
               <li key={index}>
+                {index % 10 === 0 &&
+                <div className="top-margin"></div>
+                }
                 <Question question={question.question}
                   dimension={question.dimension}
                   onChange={(starCount, dimension) => {

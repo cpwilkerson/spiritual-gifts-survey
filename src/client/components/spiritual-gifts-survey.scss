@@ -6,7 +6,10 @@
     margin: 10px;
   }
 
-  .calculator {
-    page-break-before: always;
+  @media print {
+    .top-margin {
+      height: 100px;
+      break-before: page;
+    }
   }
 }

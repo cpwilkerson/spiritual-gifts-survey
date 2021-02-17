@@ -206,7 +206,7 @@ App = /*#__PURE__*/function (_Component) {_inherits(App, _Component);var _super 
   _createClass(App, [{ key: "render", value:
     function render() {
       return /*#__PURE__*/(
-        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "app-wrapper" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", { className: "app-wrapper break-before" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_spiritual_gifts_survey__WEBPACK_IMPORTED_MODULE_3__.default, null)));
 
 
@@ -280,10 +280,13 @@ QuestionCollection = /*#__PURE__*/function (_Component) {_inherits(QuestionColle
   _createClass(QuestionCollection, [{ key: "renderQuestions", value:
     function renderQuestions(questions) {var _this2 = this;
       return /*#__PURE__*/(
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("ol", null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("ol", { className: "question-list" },
 
         questions.map(function (question, index) {return /*#__PURE__*/(
-            react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: index }, /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", { key: index },
+            index % 10 === 0 && /*#__PURE__*/
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "top-margin" }), /*#__PURE__*/
+
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_question__WEBPACK_IMPORTED_MODULE_3__.Question, { question: question.question,
               dimension: question.dimension,
               onChange: function onChange(starCount, dimension) {
@@ -709,6 +712,7 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
 
             _this2.setState({ updated: new Date() });
           } }), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "top-margin" }), /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: "1023.818", height: "591.362", viewBox: "0, 0, 1023.818, 591.362" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-36.182, -79)" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M135.5,100.5 L135.5,510.5", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" }), /*#__PURE__*/
@@ -817,6 +821,7 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M1035.5,500.5 L1035.5,".concat(500.5 - this.getLineLength('hospitality')), fillOpacity: "0", stroke: "#0000FF", strokeWidth: "10" }))), /*#__PURE__*/
 
 
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "top-margin" }), /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: "calculator" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
         this.renderDimension('leadership')), /*#__PURE__*/

@@ -64,6 +64,7 @@ class SpiritualGiftsSurvey extends Component {
 
             this.setState({updated: new Date()});
           }}/>
+        <div className="top-margin"></div>
         <svg x="0" y="0" width="1023.818" height="591.362" viewBox="0, 0, 1023.818, 591.362">
           <g id="Layer_1" transform="translate(-36.182, -79)">
             <path d="M135.5,100.5 L135.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
@@ -172,6 +173,7 @@ class SpiritualGiftsSurvey extends Component {
             <path d={`M1035.5,500.5 L1035.5,${500.5 - this.getLineLength('hospitality')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
           </g>
         </svg>
+        <div className="top-margin"></div>
         <ul className="calculator">
           <li>
             {this.renderDimension('leadership')}

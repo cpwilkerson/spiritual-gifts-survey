@@ -1,23 +1,14 @@
 .question-collection-wrapper {
   position: relative;
 
-  @media only print {
-    li:first-child {
-      page-break-before: always;
+  @media print {
+    .question-list {
+      float: none;
+      break-after: page;
     }
 
-    @media (max-width: 40em) {
-      li:nth-child(21n) {
-        page-break-before: always;
-      }
-    }
-    @media (min-width: 40em) {
-      li:nth-child(11n) {
-        page-break-before: always;
-      } 
-    }
-    li:last-child {
-      page-break-after: always;
+    li:nth-child(10n) {
+      break-after: page;
     }
   }
 }

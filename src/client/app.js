@@ -21,7 +21,7 @@ class App extends Component {
 
   render () {
     return (
-      <div className="app-wrapper">
+      <div className="app-wrapper break-before">
         <SpiritualGiftsSurvey />
       </div>
     );
