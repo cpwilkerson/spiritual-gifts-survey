@@ -16,5 +16,8 @@
         page-break-before: always;
       } 
     }
+    li:last-child {
+      page-break-after: always;
+    }
   }
 }
