@@ -58,10 +58,7 @@ class Question extends Component {
           {this.renderStar(4)}
           {this.renderStar(5)}
         </span>
-        <label style={{
-          display: 'inline-block',
-          width: '84%'
-          }}>
+        <label className="question-label">
           {this.props.question}
         </label>
       </div>

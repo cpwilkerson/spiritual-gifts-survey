@@ -7,6 +7,7 @@ const watch = require('gulp-watch');
 const logger = require('gulp-logger');
 
 const pkg = require('../package.json');
+const fs = require('fs');
 
 /**
  * Utility gulp function that finds all sass files in a project and compiles
@@ -30,6 +31,26 @@ function compileScss (sourceFolder, destFolder) {
     })).
     pipe(sourcemaps.write('./')).
     pipe(gulp.dest(destFolder)).
+    on('end', () => {
+      console.log('css compiling ended');
+      console.log('current working directory', process.cwd());
+      fs.rename(`${destFolder}app.css`,
+       `${destFolder}sgs-app.css`, (err) => {
+        if (err) {
+          console.error('app.css renaming error', {err});
+        } else {
+          console.log('app.css renamed to sgs-app.css');
+        }
+      });
+      fs.rename(`${destFolder}app.css.map`,
+       `${destFolder}sgs-app.css.map`, (err) => {
+        if (err) {
+          console.error('app.css.man renaming error', {err});
+        } else {
+          console.log('app.css.map renamed to sgs-app.css.map');
+        }
+      });
+    }).
     on('error', (err) => {
       console.log(err);
       this.emit('end');

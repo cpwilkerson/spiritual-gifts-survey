@@ -415,10 +415,7 @@ Question = /*#__PURE__*/function (_Component) {_inherits(Question, _Component);v
         this.renderStar(4),
         this.renderStar(5)), /*#__PURE__*/
 
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { style: {
-            display: 'inline-block',
-            width: '84%' } },
-
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", { className: "question-label" },
         this.props.question)));
 
 
