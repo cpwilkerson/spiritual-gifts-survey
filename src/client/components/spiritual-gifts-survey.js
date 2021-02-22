@@ -6,6 +6,25 @@ import {QuestionCollection} from './question-collection';
 
 const questions = require('./questions').questions;
 
+const dimensions = [
+  'leadership',
+  'administration',
+  'teaching',
+  'knowledge',
+  'wisdom',
+  'prophecy',
+  'discernment',
+  'exhortation',
+  'shepherding',
+  'faith',
+  'evangelism',
+  'apostleship',
+  'service/helps',
+  'mercy',
+  'giving',
+  'hospitality'
+];
+
 /**
  * My best SpiritualGiftsSurvey reactjs component ever!
  */
@@ -29,6 +48,15 @@ class SpiritualGiftsSurvey extends Component {
             }, 0) * 16;
   }
 
+  getDimensionValue (dimension) {
+    return questions.filter((item) => item.dimension === dimension).
+      reduce((accumulator, item) => {
+        const value = item.value ? item.value : 0;
+
+        return accumulator + value;
+      }, 0);
+  }
+
   renderDimension (dimension) {
     return (
       <div>
@@ -38,14 +66,38 @@ class SpiritualGiftsSurvey extends Component {
           </strong>
         </label>
         <span className="value">
-          {questions.filter((item) => item.dimension === dimension).
-            reduce((accumulator, item) => {
-              const value = item.value ? item.value : 0;
-
-              return accumulator + value;
-            }, 0)}
+          {this.getDimensionValue(dimension)}
         </span>
       </div>
+    );
+  }
+
+  renderScore (dimension) {
+    const score = this.getDimensionValue(dimension);
+    const scoreY = score * 16;
+    const index = dimensions.findIndex((item) => item === dimension);
+    const columnX = index * 60;
+    const textX = columnX + 135;
+    const textY = 501 - scoreY;
+    const Y_ZERO = 784;
+    // 120.5 is the X for zero
+    // 500.5 is the Y for zero
+
+
+    if (score > 0) {
+      return (
+        <React.Fragment key={index}>
+          <path d={`M${129.784 + columnX},${Y_ZERO - 260.167 - scoreY} L${141.216 + columnX},${Y_ZERO - 260.167 - scoreY} C${151.506 + columnX},${Y_ZERO - 260.167 - scoreY} ${159.848 + columnX},${Y_ZERO - 268.763 - scoreY} ${159.848 + columnX},${Y_ZERO - 279.367 - scoreY} L${159.848 + columnX},${Y_ZERO - 288.967 - scoreY} C${159.848 + columnX},${Y_ZERO - 299.571 - scoreY} ${151.506 + columnX},${Y_ZERO - 308.167 - scoreY} ${141.216 + columnX},${Y_ZERO - 308.167 - scoreY} L${129.784 + columnX},${Y_ZERO - 308.167 - scoreY} C${119.494 + columnX},${Y_ZERO - 308.167 - scoreY} ${111.152 + columnX},${Y_ZERO - 299.571 - scoreY} ${111.152 + columnX},${Y_ZERO - 288.967 - scoreY} L${111.152 + columnX},${Y_ZERO - 279.367 - scoreY} C${111.152 + columnX},${Y_ZERO - 268.763 - scoreY} ${119.494 + columnX},${Y_ZERO - 260.167 - scoreY} ${129.784 + columnX},${Y_ZERO - 260.167 - scoreY} z`} fill="#FFFFFF"/>
+          <path d={`M${129.784 + columnX},${Y_ZERO - 260.167 - scoreY} L${141.216 + columnX},${Y_ZERO - 260.167 - scoreY} C${151.506 + columnX},${Y_ZERO - 260.167 - scoreY} ${159.848 + columnX},${Y_ZERO - 268.763 - scoreY} ${159.848 + columnX},${Y_ZERO - 279.367 - scoreY} L${159.848 + columnX},${Y_ZERO - 288.967 - scoreY} C${159.848 + columnX},${Y_ZERO - 299.571 - scoreY} ${151.506 + columnX},${Y_ZERO - 308.167 - scoreY} ${141.216 + columnX},${Y_ZERO - 308.167 - scoreY} L${129.784 + columnX},${Y_ZERO - 308.167 - scoreY} C${119.494 + columnX},${Y_ZERO - 308.167 - scoreY} ${111.152 + columnX},${Y_ZERO - 299.571 - scoreY} ${111.152 + columnX},${Y_ZERO - 288.967 - scoreY} L${111.152 + columnX},${Y_ZERO - 279.367 - scoreY} C${111.152 + columnX},${Y_ZERO - 268.763 - scoreY} ${119.494 + columnX},${Y_ZERO - 260.167 - scoreY} ${129.784 + columnX},${Y_ZERO - 260.167 - scoreY} z`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+          <text transform={`matrix(1, 0, 0, 1, ${textX}, ${textY})`}>
+            <tspan x={score < 10 ? '-6.54' : '-13.08'} y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">{score}</tspan>
+          </text>
+        </React.Fragment>
+      );
+    }
+
+    return (
+      <React.Fragment key={index}></React.Fragment>
     );
   }
 
@@ -65,7 +117,7 @@ class SpiritualGiftsSurvey extends Component {
             this.setState({updated: new Date()});
           }}/>
         <div className="top-margin"></div>
-        <svg x="0" y="0" width="1023.818" height="591.362" viewBox="0, 0, 1023.818, 591.362">
+        <svg x="0" y="0" width="1123.818" height="691.362" viewBox="0, 0, 1123.818, 591.362">
           <g id="Layer_1" transform="translate(-36.182, -79)">
             <path d="M135.5,100.5 L135.5,510.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
             <path d="M120.5,500.5 L1035.5,500.5" fillOpacity="0" stroke="#000000" strokeWidth="1"/>
@@ -108,10 +160,14 @@ class SpiritualGiftsSurvey extends Component {
               <tspan x="-14.29" y="7" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">5</tspan>
             </text>
             <text transform="matrix(0.707, -0.707, 0.707, 0.707, 97.921, 571.739)">
-              <tspan x="-62.112" y="4" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">LEADERSHIP</tspan>
+              <tspan x="-62.112" y="4" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">
+                LEADERSHIP
+              </tspan>
             </text>
             <text transform="matrix(0.707, -0.707, 0.707, 0.707, 136.181, 590.181)">
-              <tspan x="-87.682" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">ADMINISTRATION</tspan>
+              <tspan x="-87.682" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">
+                ADMINISTRATION
+              </tspan>
             </text>
             <text transform="matrix(0.707, -0.707, 0.707, 0.707, 229.074, 561.869)">
               <tspan x="-56.142" y="4.789" fontFamily="PTSans-Regular" fontSize="24" fill="#333333">TEACHING</tspan>
@@ -171,59 +227,10 @@ class SpiritualGiftsSurvey extends Component {
             <path d={`M915.5,500.5 L915.5,${500.5 - this.getLineLength('mercy')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
             <path d={`M975.5,500.5 L975.5,${500.5 - this.getLineLength('giving')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
             <path d={`M1035.5,500.5 L1035.5,${500.5 - this.getLineLength('hospitality')}`} fillOpacity="0" stroke="#0000FF" strokeWidth="10"/>
+            {dimensions.map((item) => this.renderScore(item))}
           </g>
         </svg>
         <div className="top-margin"></div>
-        <ul className="calculator">
-          <li>
-            {this.renderDimension('leadership')}
-          </li>
-          <li>
-            {this.renderDimension('administration')}
-          </li>
-          <li>
-            {this.renderDimension('teaching')}
-          </li>
-          <li>
-            {this.renderDimension('knowledge')}
-          </li>
-          <li>
-            {this.renderDimension('wisdom')}
-          </li>
-          <li>
-            {this.renderDimension('prophecy')}
-          </li>
-          <li>
-            {this.renderDimension('discernment')}
-          </li>
-          <li>
-            {this.renderDimension('exhortation')}
-          </li>
-          <li>
-            {this.renderDimension('shepherding')}
-          </li>
-          <li>
-            {this.renderDimension('faith')}
-          </li>
-          <li>
-            {this.renderDimension('evangelism')}
-          </li>
-          <li>
-            {this.renderDimension('apostleship')}
-          </li>
-          <li>
-            {this.renderDimension('service/helps')}
-          </li>
-          <li>
-            {this.renderDimension('mercy')}
-          </li>
-          <li>
-            {this.renderDimension('giving')}
-          </li>
-          <li>
-            {this.renderDimension('hospitality')}
-          </li>
-        </ul>
       </div>
     );
   }

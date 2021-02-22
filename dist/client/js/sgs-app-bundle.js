@@ -654,6 +654,25 @@ function _typeof(obj) {"@babel/helpers - typeof";if (typeof Symbol === "function
 
 var questions = __webpack_require__(/*! ./questions */ "./src/client/components/questions.js").questions;
 
+var dimensions = [
+'leadership',
+'administration',
+'teaching',
+'knowledge',
+'wisdom',
+'prophecy',
+'discernment',
+'exhortation',
+'shepherding',
+'faith',
+'evangelism',
+'apostleship',
+'service/helps',
+'mercy',
+'giving',
+'hospitality'];
+
+
 /**
  * My best SpiritualGiftsSurvey reactjs component ever!
  */var
@@ -675,6 +694,15 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
 
         return accumulator + value;
       }, 0) * 16;
+    } }, { key: "getDimensionValue", value:
+
+    function getDimensionValue(dimension) {
+      return questions.filter(function (item) {return item.dimension === dimension;}).
+      reduce(function (accumulator, item) {
+        var value = item.value ? item.value : 0;
+
+        return accumulator + value;
+      }, 0);
     } }, { key: "renderDimension", value:
 
     function renderDimension(dimension) {
@@ -686,14 +714,38 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
 
 
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "value" },
-        questions.filter(function (item) {return item.dimension === dimension;}).
-        reduce(function (accumulator, item) {
-          var value = item.value ? item.value : 0;
-
-          return accumulator + value;
-        }, 0))));
+        this.getDimensionValue(dimension))));
 
 
+
+    } }, { key: "renderScore", value:
+
+    function renderScore(dimension) {
+      var score = this.getDimensionValue(dimension);
+      var scoreY = score * 16;
+      var index = dimensions.findIndex(function (item) {return item === dimension;});
+      var columnX = index * 60;
+      var textX = columnX + 135;
+      var textY = 501 - scoreY;
+      var Y_ZERO = 784;
+      // 120.5 is the X for zero
+      // 500.5 is the Y for zero
+
+
+      if (score > 0) {
+        return /*#__PURE__*/(
+          react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, { key: index }, /*#__PURE__*/
+          react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M".concat(129.784 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " L").concat(141.216 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " C").concat(151.506 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " ").concat(159.848 + columnX, ",").concat(Y_ZERO - 268.763 - scoreY, " ").concat(159.848 + columnX, ",").concat(Y_ZERO - 279.367 - scoreY, " L").concat(159.848 + columnX, ",").concat(Y_ZERO - 288.967 - scoreY, " C").concat(159.848 + columnX, ",").concat(Y_ZERO - 299.571 - scoreY, " ").concat(151.506 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " ").concat(141.216 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " L").concat(129.784 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " C").concat(119.494 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " ").concat(111.152 + columnX, ",").concat(Y_ZERO - 299.571 - scoreY, " ").concat(111.152 + columnX, ",").concat(Y_ZERO - 288.967 - scoreY, " L").concat(111.152 + columnX, ",").concat(Y_ZERO - 279.367 - scoreY, " C").concat(111.152 + columnX, ",").concat(Y_ZERO - 268.763 - scoreY, " ").concat(119.494 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " ").concat(129.784 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " z"), fill: "#FFFFFF" }), /*#__PURE__*/
+          react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M".concat(129.784 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " L").concat(141.216 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " C").concat(151.506 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " ").concat(159.848 + columnX, ",").concat(Y_ZERO - 268.763 - scoreY, " ").concat(159.848 + columnX, ",").concat(Y_ZERO - 279.367 - scoreY, " L").concat(159.848 + columnX, ",").concat(Y_ZERO - 288.967 - scoreY, " C").concat(159.848 + columnX, ",").concat(Y_ZERO - 299.571 - scoreY, " ").concat(151.506 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " ").concat(141.216 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " L").concat(129.784 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " C").concat(119.494 + columnX, ",").concat(Y_ZERO - 308.167 - scoreY, " ").concat(111.152 + columnX, ",").concat(Y_ZERO - 299.571 - scoreY, " ").concat(111.152 + columnX, ",").concat(Y_ZERO - 288.967 - scoreY, " L").concat(111.152 + columnX, ",").concat(Y_ZERO - 279.367 - scoreY, " C").concat(111.152 + columnX, ",").concat(Y_ZERO - 268.763 - scoreY, " ").concat(119.494 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " ").concat(129.784 + columnX, ",").concat(Y_ZERO - 260.167 - scoreY, " z"), fillOpacity: "0", stroke: "#0000FF", strokeWidth: "10" }), /*#__PURE__*/
+          react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { transform: "matrix(1, 0, 0, 1, ".concat(textX, ", ").concat(textY, ")") }, /*#__PURE__*/
+          react__WEBPACK_IMPORTED_MODULE_0__.createElement("tspan", { x: score < 10 ? '-6.54' : '-13.08', y: "7", fontFamily: "PTSans-Regular", fontSize: "24", fill: "#333333" }, score))));
+
+
+
+      }
+
+      return /*#__PURE__*/(
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, { key: index }));
 
     } }, { key: "render", value:
 
@@ -713,7 +765,7 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
             _this2.setState({ updated: new Date() });
           } }), /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "top-margin" }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: "1023.818", height: "591.362", viewBox: "0, 0, 1023.818, 591.362" }, /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { x: "0", y: "0", width: "1123.818", height: "691.362", viewBox: "0, 0, 1123.818, 591.362" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", { id: "Layer_1", transform: "translate(-36.182, -79)" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M135.5,100.5 L135.5,510.5", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" }), /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M120.5,500.5 L1035.5,500.5", fillOpacity: "0", stroke: "#000000", strokeWidth: "1" }), /*#__PURE__*/
@@ -758,8 +810,12 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { transform: "matrix(0.707, -0.707, 0.707, 0.707, 97.921, 571.739)" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tspan", { x: "-62.112", y: "4", fontFamily: "PTSans-Regular", fontSize: "24", fill: "#333333" }, "LEADERSHIP")), /*#__PURE__*/
 
+
+
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { transform: "matrix(0.707, -0.707, 0.707, 0.707, 136.181, 590.181)" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tspan", { x: "-87.682", y: "4.789", fontFamily: "PTSans-Regular", fontSize: "24", fill: "#333333" }, "ADMINISTRATION")), /*#__PURE__*/
+
+
 
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("text", { transform: "matrix(0.707, -0.707, 0.707, 0.707, 229.074, 561.869)" }, /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("tspan", { x: "-56.142", y: "4.789", fontFamily: "PTSans-Regular", fontSize: "24", fill: "#333333" }, "TEACHING")), /*#__PURE__*/
@@ -818,60 +874,11 @@ SpiritualGiftsSurvey = /*#__PURE__*/function (_Component) {_inherits(SpiritualGi
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M855.5,500.5 L855.5,".concat(500.5 - this.getLineLength('service/helps')), fillOpacity: "0", stroke: "#0000FF", strokeWidth: "10" }), /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M915.5,500.5 L915.5,".concat(500.5 - this.getLineLength('mercy')), fillOpacity: "0", stroke: "#0000FF", strokeWidth: "10" }), /*#__PURE__*/
         react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M975.5,500.5 L975.5,".concat(500.5 - this.getLineLength('giving')), fillOpacity: "0", stroke: "#0000FF", strokeWidth: "10" }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M1035.5,500.5 L1035.5,".concat(500.5 - this.getLineLength('hospitality')), fillOpacity: "0", stroke: "#0000FF", strokeWidth: "10" }))), /*#__PURE__*/
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { d: "M1035.5,500.5 L1035.5,".concat(500.5 - this.getLineLength('hospitality')), fillOpacity: "0", stroke: "#0000FF", strokeWidth: "10" }),
+        dimensions.map(function (item) {return _this2.renderScore(item);}))), /*#__PURE__*/
 
 
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "top-margin" }), /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", { className: "calculator" }, /*#__PURE__*/
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('leadership')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('administration')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('teaching')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('knowledge')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('wisdom')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('prophecy')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('discernment')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('exhortation')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('shepherding')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('faith')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('evangelism')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('apostleship')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('service/helps')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('mercy')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('giving')), /*#__PURE__*/
-
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null,
-        this.renderDimension('hospitality')))));
-
-
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: "top-margin" })));
 
 
     } }]);return SpiritualGiftsSurvey;}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
