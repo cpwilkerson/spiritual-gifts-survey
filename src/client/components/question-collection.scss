@@ -1,14 +1,15 @@
 .question-collection-wrapper {
   position: relative;
-
+  
+  li:nth-child(10n) {
+    break-after: page;
+  }
+  
   @media print {
     .question-list {
       float: none;
       break-after: page;
     }
 
-    li:nth-child(10n) {
-      break-after: page;
-    }
   }
 }

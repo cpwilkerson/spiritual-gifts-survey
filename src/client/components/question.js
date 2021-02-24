@@ -50,17 +50,16 @@ class Question extends Component {
   render () {
     return (
       <div className="question-wrapper">
-        <span className="stars"
-          style={{margin: '10px'}}>
+        <label className="question-label">
+          {this.props.question}
+        </label>
+        <div className="stars">
           {this.renderStar(1)}
           {this.renderStar(2)}
           {this.renderStar(3)}
           {this.renderStar(4)}
           {this.renderStar(5)}
-        </span>
-        <label className="question-label">
-          {this.props.question}
-        </label>
+        </div>
       </div>
     );
   }

@@ -6,10 +6,38 @@
     margin: 10px;
   }
 
+  .top-margin {
+    height: 50px;
+    break-before: page;
+  }
+
+  .sps-graph {
+    width: 90%;
+    overflow-x: scroll;
+  }
+
+  .fit-to-width {
+    float: right;
+  }
+
+  @media screen and (min-width: 1124px) {
+    .fit-to-width {
+      display: none;
+    }
+  }
+
   @media print {
+    .sps-graph {
+      overflow-x: unset;
+    }
+
     .top-margin {
       height: 100px;
       break-before: page;
+    }
+
+    .fit-to-width {
+      display: none;
     }
   }
 }
